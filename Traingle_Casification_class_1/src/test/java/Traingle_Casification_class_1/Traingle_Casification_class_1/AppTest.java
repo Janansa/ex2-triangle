@@ -13,50 +13,85 @@ public class AppTest {
 	TriangleClassifier triangle = new TriangleClassifier();
 	
 	@Test
-  
-	public void equilateralTriangle(){
-        int a = 2;
-        int b = 2;
-        int c = 2;
-        TriangleClassifier.classifyTriangle(a,b,c);
-        String expected =Triangle_Types.equilateral.toString();
+	public void partition1(){
+
+        TriangleClassifier.classifyTriangle(1,2,4);
+        String expected =Triangle_Types.Nottriangle.toString();
         String result = TriangleClassifier.get_type().toString();
         assertEquals(expected, result.toString());
     }
 	
 	@Test
-	  
-	public void scaleneTriangle(){
-        int a = 4;
-        int b = 2;
-        int c = 3;
-        TriangleClassifier.classifyTriangle(a,b,c);
+	public void partition2(){
+
+        TriangleClassifier.classifyTriangle(3,1,1);
+        String expected =Triangle_Types.Nottriangle.toString();
+        String result = TriangleClassifier.get_type().toString();
+        assertEquals(expected, result.toString());
+    }
+	
+	@Test
+	public void partition3(){
+
+        TriangleClassifier.classifyTriangle(1,3,1);
+        String expected =Triangle_Types.Nottriangle.toString();
+        String result = TriangleClassifier.get_type().toString();
+        assertEquals(expected, result.toString());
+    }
+
+	@Test
+	public void partition4(){
+
+        TriangleClassifier.classifyTriangle(1,1,3);
+        String expected =Triangle_Types.Nottriangle.toString();
+        String result = TriangleClassifier.get_type().toString();
+        assertEquals(expected, result.toString());
+    }
+	
+	@Test
+	public void partition5(){
+
+        TriangleClassifier.classifyTriangle(4,5,6);
         String expected =Triangle_Types.Scalene.toString();
         String result = TriangleClassifier.get_type().toString();
         assertEquals(expected, result.toString());
     }
 	
 	@Test
-	  
-	public void isoscelesTriangle(){
-        int a = 2;
-        int b = 2;
-        int c = 3;
-        TriangleClassifier.classifyTriangle(a,b,c);
+	public void partition6(){
+
+        TriangleClassifier.classifyTriangle(5,4,4);
         String expected =Triangle_Types.isosceles.toString();
         String result = TriangleClassifier.get_type().toString();
         assertEquals(expected, result.toString());
     }
 	
 	@Test
-	  
-	public void nottriangle(){
-        int a = 2;
-        int b = 2;
-        int c = 0;
-        TriangleClassifier.classifyTriangle(a,b,c);
-        String expected =Triangle_Types.Nottriangle.toString();
+	public void partition7(){
+
+        TriangleClassifier.classifyTriangle(4,5,4);
+        String expected =Triangle_Types.isosceles.toString();
         String result = TriangleClassifier.get_type().toString();
         assertEquals(expected, result.toString());
     }
+	
+	@Test
+	public void partition8(){
+
+        TriangleClassifier.classifyTriangle(4,4,5);
+        String expected =Triangle_Types.isosceles.toString();
+        String result = TriangleClassifier.get_type().toString();
+        assertEquals(expected, result.toString());
+    }
+	
+	@Test
+	public void partition9(){
+
+        TriangleClassifier.classifyTriangle(4,4,4);
+        String expected =Triangle_Types.equilateral.toString();
+        String result = TriangleClassifier.get_type().toString();
+        assertEquals(expected, result.toString());
+    }
+	
+	
 }  
